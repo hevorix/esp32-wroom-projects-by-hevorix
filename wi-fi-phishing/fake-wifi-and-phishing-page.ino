@@ -2,9 +2,9 @@
 #include <WebServer.h>
 #include <DNSServer.h>
 
-const char* ssid = "@SATOMORU_YT";  // Wi-Fi nomi
-const char* password = "12345678";  // Wi-Fi paroli
-const char* adminPassword = "admin123";  // Admin sahifasi uchun parol
+const char* ssid = "@satomoru";  
+const char* password = "12345678"; 
+const char* adminPassword = "admin123";  
 
 WebServer server(80);
 DNSServer dnsServer;
@@ -16,11 +16,10 @@ struct User {
   String connectTime;
 };
 
-User users[10];  // Foydalanuvchilar ma'lumotlarini saqlash uchun array
-int userCount = 0;  // Foydalanuvchi sonini kuzatish
-bool isAuthenticated = false;  // Admin uchun parol tekshiruvi
+User users[10];  
+int userCount = 0;  
+bool isAuthenticated = false;  
 
-// Foydalanuvchilarni qabul qilish sahifasi
 void handleRoot() {
   String html = "<!DOCTYPE html><html><body>";
   html += "<h1>wifiga ulanish uchun telfon raqamingizni kiriting</h1>";
